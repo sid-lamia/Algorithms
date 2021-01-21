@@ -1,0 +1,15 @@
+import java.util.*;
+
+class Program {
+  public static int getNthFib(int n) {
+		int first = 0; 
+		int second = 1;
+		int counter = 3; 
+		for (int i = counter; i <= n; i++) {
+			int nextNumber = first + second;
+			first = second;
+			second = nextNumber;
+		}
+		return n > 1 ? second : first;
+  }
+}
