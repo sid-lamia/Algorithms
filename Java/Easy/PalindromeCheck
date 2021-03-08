@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Program {
+  public static boolean isPalindrome(String str) {
+		boolean isPalindrome = true;
+		int nLimit = 0;
+		if (str.length()%2 == 0) {
+			nLimit = str.length()/2;
+		} else {
+			nLimit = (int) Math.floor(str.length()/2);				
+		}
+		for (int n = 0; n < nLimit; n++) {
+			if (str.charAt(n) == str.charAt((str.length() - 1) - n)) {
+				continue;
+			} else {
+				return false;
+			}
+		} return true;
+	}
+}
