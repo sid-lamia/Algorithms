@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Program {
+  public static int[] findThreeLargestNumbers(int[] array) {
+		Integer largest = Integer.MIN_VALUE;
+		Integer secondLargest = Integer.MIN_VALUE;
+		Integer thirdLargest = Integer.MIN_VALUE;
+		for (int n = 0; n < array.length; n++) { 
+			if (largest < array[n]) {
+				thirdLargest = secondLargest;
+				secondLargest = largest;
+				largest = array[n];
+			} else if (secondLargest < array[n]) { 
+				thirdLargest = secondLargest; 
+				secondLargest = array[n];
+			} else if (thirdLargest < array[n]) {
+				thirdLargest = array[n];
+			}
+		}
+		int[] returnArray = {thirdLargest, secondLargest, largest};
+		return returnArray;
+  }
+}
