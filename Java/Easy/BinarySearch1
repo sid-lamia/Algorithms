@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Program {
+  public static int binarySearch(int[] array, int target) {
+		return binarySearchHelper(array, target, 0, array.length-1);
+	}
+
+	public static int binarySearchHelper(int[] array, int target, int leftPointer, int rightPointer) {
+		if (leftPointer > rightPointer) { 
+			return -1;
+		}	
+		int midPointer = (rightPointer + leftPointer)/2;
+		if (target == array[midPointer]) {
+			return midPointer;
+		} else if (target > array[midPointer]) {
+			leftPaointer = midPointer + 1;
+			return binarySearchHelper(array, target, midPointer+1, rightPointer);
+		} else {
+			rightPointer = midPointer - 1;
+			return binarySearchHelper(array, target, leftPointer, midPointer-1);
+		}
+	}
+}
